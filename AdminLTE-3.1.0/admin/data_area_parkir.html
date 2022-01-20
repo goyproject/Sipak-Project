@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>Data Area Parkir</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link
@@ -303,8 +303,8 @@
             >
               <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
                   <i class="fas fa-th-large"></i>
                   <p>Dashboard</p>
                 </a>
@@ -319,7 +319,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="data_kendaraan.html" class="nav-link">
+                    <a href="data_kendaraan.html" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Data</p>
                     </a>
@@ -336,50 +336,16 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="./gedung.html" class="nav-link">
                   <i class="nav-icon fas fa-chart-pie"></i>
-                  <p>
-                    Gedung
-                    <i class="right fas fa-angle-right"></i>
-                  </p>
+                  <p>Gedung</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/charts/chartjs.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Kampus A</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/charts/flot.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Kampus B</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item menu-open">
+                <a href="./data_area_parkir.html" class="nav-link active">
                   <i class="nav-icon fas fa-tree"></i>
-                  <p>
-                    Area Parkir
-                    <i class="fas fa-angle-right right"></i>
-                  </p>
+                  <p>Area Parkir</p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/UI/general.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Area Parkir</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/UI/general.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Form Area Parkir</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
               <li class="nav-item mr-2">
@@ -402,13 +368,14 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Dashboard</h1>
+                <h1 class="m-0">Data Area Parkir</h1>
               </div>
               <!-- /.col -->
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Dashboard v1</li>
+                  <li class="breadcrumb-item active">
+                    <a href="./data_area_parkir.html">Area Parkir</a>
+                  </li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -419,34 +386,191 @@
         </div>
         <!-- /.content-header -->
 
+        <!-- modal -->
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Tambah Data Area Parkir
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form" action="">
+                  <div class="form-group mb-2">
+                    <label>Gedung</label>
+                    <select class="form-control">
+                      <option>Pilih Gedung</option>
+                      <option value="Kampus A STT-NF">Kampus A STT-NF</option>
+                      <option value="Kampus B1 STT-NF">Kampus B1 STT-NF</option>
+                      <option value="Kampus B2 STT-NF">Kampus B2 STT-NF</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label>Nama Tempat</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Masukan Nama Area Parkir"
+                    />
+                  </div>
+                  <div class="form-group mb-2">
+                    <label>Kapasitas</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="Masukan Kapasitas Parkir"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          id="exampleModalCenterEdit"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Edit Data Area Parkir
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form" action="">
+                  <div class="form-group mb-2">
+                    <label>Gedung</label>
+                    <select class="form-control">
+                      <option>Pilih Gedung</option>
+                      <option value="Kampus A STT-NF" selected>
+                        Kampus A STT-NF
+                      </option>
+                      <option value="Kampus B1 STT-NF">Kampus B1 STT-NF</option>
+                      <option value="Kampus B2 STT-NF">Kampus B2 STT-NF</option>
+                    </select>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label>Nama Tempat</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Masukan Nama Area Parkir"
+                      value="Area Depan B2"
+                    />
+                  </div>
+                  <div class="form-group mb-2">
+                    <label>Kapasitas</label>
+                    <input
+                      class="form-control"
+                      type="number"
+                      placeholder="Masukan Kapasitas Parkir"
+                      value="200"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Main content -->
         <section class="content">
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Title</h3>
-
-              <!-- <div class="card-tools">
-                <button
-                  type="button"
-                  class="btn btn-tool"
-                  data-card-widget="collapse"
-                  title="Collapse"
-                >
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-tool"
-                  data-card-widget="remove"
-                  title="Remove"
-                >
-                  <i class="fas fa-times"></i>
-                </button>
-              </div> -->
+              <a
+                class="btn btn-sm btn-success"
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
+                ><i class="fa fa-plus"></i> Tambah Data</a
+              >
             </div>
             <div class="card-body">
-              Start creating your amazing application!
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Area</th>
+                    <th>Kapasitas</th>
+                    <th>Gedung</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Area Depan B2</td>
+                    <td>200</td>
+                    <td>Kampus B STT NF</td>
+                    <td>
+                      <a
+                        class="btn btn-sm btn-primary"
+                        data-toggle="modal"
+                        data-target="#exampleModalCenterEdit"
+                        ><i class="fa fa-edit"></i> Edit</a
+                      >
+                      |
+                      <a class="btn btn-sm btn-danger"
+                        ><i class="fa fa-trash"></i> Hapus</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Area Belakang B2</td>
+                    <td>200</td>
+                    <td>Kampus B STT NF</td>
+                    <td>
+                      <a
+                        class="btn btn-sm btn-primary"
+                        data-toggle="modal"
+                        data-target="#exampleModalCenterEdit"
+                        ><i class="fa fa-edit"></i> Edit</a
+                      >
+                      |
+                      <a class="btn btn-sm btn-danger"
+                        ><i class="fa fa-trash"></i> Hapus</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <!-- /.card-body -->
             <!-- /.card-footer-->
@@ -458,8 +582,8 @@
       <!-- /.content-wrapper -->
       <footer class="main-footer">
         <strong
-          >Copyright &copy; 2014-2021
-          <a href="https://adminlte.io">AdminLTE.io</a>.</strong
+          >Copyright &copy; 2022
+          <a href="https://adminlte.io">STT Nurul Fikri</a>.</strong
         >
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
